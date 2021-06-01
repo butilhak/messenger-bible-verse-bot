@@ -49,8 +49,6 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
     else:
         try:
             data = req.get_json()
-            sendTG(str(data))
-            #logging.info(data)
             if data["object"] == "page":
                 for entry in data['entry']:
                     for messaging_event in entry['messaging']:
